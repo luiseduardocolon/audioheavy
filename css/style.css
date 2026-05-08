@@ -3,6 +3,23 @@
    Dark theme, tropical house aesthetic
    ============================================ */
 
+/* --- @font-face ---
+   This tells the browser: "When I reference font-family 'Paradox',
+   download this file and use it." The font only loads when an
+   element actually uses it (the h1 in our case).
+   
+   - src: url() points to the font file relative to this CSS file
+   - format('truetype') tells the browser it's a TTF file
+   - font-display: swap shows fallback text immediately, then
+     swaps to Paradox once it downloads (no blank flash) */
+@font-face {
+  font-family: 'Paradox';
+  src: url('../assets/Paradox.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* --- CSS Custom Properties (variables) ---
    Defined once here, reused everywhere.
    To change the whole color scheme later,
@@ -16,6 +33,8 @@
   --accent: #00d4aa;
   --accent-glow: rgba(0, 212, 170, 0.3);
   --accent-secondary: #ff6b6b;
+  --brand-orange: #ff6a00;
+  --brand-orange-glow: rgba(255, 106, 0, 0.3);
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --max-width: 800px;
@@ -72,18 +91,18 @@ body {
 }
 
 .brand__name {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-family: 'Paradox', var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  /* Gradient text effect */
-  background: linear-gradient(135deg, var(--accent), #00f0c0, var(--accent));
+  /* Habanero orange gradient — brilliant orange with a hint of orange-red */
+  background: linear-gradient(135deg, #ff6a00, #ff8c1a, #ff5500);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* Subtle glow */
-  filter: drop-shadow(0 0 20px var(--accent-glow));
+  /* Orange glow to match */
+  filter: drop-shadow(0 0 20px rgba(255, 106, 0, 0.3));
 }
 
 .brand__tagline {
@@ -225,7 +244,7 @@ body {
    "max-width: 600px" targets phones. */
 @media (max-width: 600px) {
   .brand__name {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
   }
 
   .brand__tagline {
