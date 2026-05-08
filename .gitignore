@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (for future use)
+node_modules/
+
+# Python (for Phase 2)
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Build artifacts
+dist/
+build/

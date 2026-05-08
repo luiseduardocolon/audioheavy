@@ -1,0 +1,265 @@
+/* ============================================
+   AudioHeavy — Global Styles
+   Dark theme, tropical house aesthetic
+   ============================================ */
+
+/* --- CSS Custom Properties (variables) ---
+   Defined once here, reused everywhere.
+   To change the whole color scheme later,
+   just update these values. */
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: #1a1a2e;
+  --text-primary: #e8e8f0;
+  --text-secondary: #8888a0;
+  --accent: #00d4aa;
+  --accent-glow: rgba(0, 212, 170, 0.3);
+  --accent-secondary: #ff6b6b;
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --max-width: 800px;
+  --transition: 0.3s ease;
+}
+
+/* --- Reset & Base ---
+   Remove default browser margins/padding
+   and set box-sizing so padding doesn't
+   increase element width */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  /* Subtle gradient background */
+  background: linear-gradient(
+    160deg,
+    var(--bg-primary) 0%,
+    #0d0d1a 50%,
+    #0a1a1a 100%
+  );
+}
+
+/* --- Main Container --- */
+.container {
+  max-width: var(--max-width);
+  width: 100%;
+  text-align: center;
+}
+
+/* --- Header / Brand --- */
+.brand {
+  margin-bottom: 1rem;
+}
+
+.brand__name {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  /* Gradient text effect */
+  background: linear-gradient(135deg, var(--accent), #00f0c0, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Subtle glow */
+  filter: drop-shadow(0 0 20px var(--accent-glow));
+}
+
+.brand__tagline {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+/* --- Divider --- */
+.divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 2rem auto;
+  border: none;
+}
+
+/* --- Status Section --- */
+.status {
+  margin-bottom: 2.5rem;
+}
+
+.status__badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 50px;
+  /* Pulsing glow animation */
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px var(--accent-glow); }
+  50% { box-shadow: 0 0 20px var(--accent-glow); }
+}
+
+.status__text {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Mixcloud Embed --- */
+.player {
+  margin: 2.5rem auto;
+  max-width: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-card);
+  padding: 1rem;
+}
+
+.player__title {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.player__embed {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.player__embed iframe {
+  width: 100%;
+  height: 120px;
+  border: none;
+}
+
+/* --- Social Links --- */
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.social__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: all var(--transition);
+}
+
+.social__link:hover {
+  border-color: var(--accent);
+  background: rgba(0, 212, 170, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social__icon {
+  font-size: 1.1rem;
+}
+
+/* --- Footer --- */
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- Responsive Design ---
+   @media queries adapt the layout
+   for different screen sizes.
+   "max-width: 600px" targets phones. */
+@media (max-width: 600px) {
+  .brand__name {
+    font-size: 2.2rem;
+  }
+
+  .brand__tagline {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+  }
+
+  .social {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .social__link {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+
+  body {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* --- Fade-in Animation ---
+   Applied to elements via JS to
+   create a staggered entrance effect */
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

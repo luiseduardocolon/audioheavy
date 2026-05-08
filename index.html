@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    <meta charset> — Tells the browser to use UTF-8 encoding (supports emojis, accents, etc.)
+    <meta viewport> — Makes the page responsive on mobile devices
+    <meta description> — What shows up in Google search results below the title
+    <meta og:*> — Controls how the page looks when shared on social media (Open Graph protocol)
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AudioHeavy — Tropical house DJ mixes and music by Luis Eduardo Colon. New mixes on Mixcloud and YouTube.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="AudioHeavy — Tropical House Music">
+  <meta property="og:description" content="DJ mixes, tropical house vibes, and more. Coming soon.">
+  <meta property="og:url" content="https://audioheavy.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AudioHeavy">
+
+  <title>AudioHeavy — Tropical House Music</title>
+
+  <!--
+    Google Fonts: Inter
+    We load the font from Google's CDN. "display=swap" means the page
+    renders immediately with a fallback font, then swaps to Inter once loaded.
+    This prevents the page from showing blank text while the font downloads.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- Brand / Logo -->
+    <header class="brand fade-in">
+      <h1 class="brand__name">AudioHeavy</h1>
+      <p class="brand__tagline">Tropical House &amp; Good Vibes</p>
+    </header>
+
+    <hr class="divider fade-in">
+
+    <!-- Status Badge -->
+    <section class="status fade-in">
+      <span class="status__badge">Coming Soon</span>
+      <p class="status__text">
+        A new home for tropical house mixes, music, and merch.
+        Something fresh is in the works.
+      </p>
+    </section>
+
+    <!-- Mixcloud Embed Player -->
+    <section class="player fade-in">
+      <p class="player__title">🎵 Latest on Mixcloud</p>
+      <div class="player__embed">
+        <!--
+          Mixcloud provides embed codes for any show.
+          The iframe loads Mixcloud's player widget directly into our page.
+          "feed" parameter points to your Mixcloud profile — it shows your latest mix.
+          You can replace this URL with a specific show URL later.
+        -->
+        <iframe
+          title="AudioHeavy on Mixcloud"
+          src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Faudioheavymusic%2F"
+          allow="autoplay"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Social Links -->
+    <nav class="social fade-in" aria-label="Social media links">
+      <a href="https://www.mixcloud.com/audioheavymusic/" target="_blank" rel="noopener noreferrer" class="social__link">
+        <span class="social__icon">🎧</span>
+        Mixcloud
+      </a>
+      <a href="https://www.youtube.com/@audioheavy" target="_blank" rel="noopener noreferrer" class="social__link">
+        <span class="social__icon">📺</span>
+        YouTube
+      </a>
+      <a href="https://www.linkedin.com/in/elecee" target="_blank" rel="noopener noreferrer" class="social__link">
+        <span class="social__icon">💼</span>
+        LinkedIn
+      </a>
+      <a href="https://github.com/luiseduardocolon/audioheavy" target="_blank" rel="noopener noreferrer" class="social__link">
+        <span class="social__icon">🐙</span>
+        GitHub
+      </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer fade-in">
+      <p>&copy; <span id="current-year"></span> AudioHeavy &middot; Luis Eduardo Colon</p>
+    </footer>
+
+  </main>
+
+  <!--
+    JavaScript is loaded at the end of <body> so the HTML is fully
+    parsed before the script runs. This is faster than putting it
+    in <head> (which would block rendering until the script downloads).
+  -->
+  <script src="js/main.js"></script>
+</body>
+</html>
